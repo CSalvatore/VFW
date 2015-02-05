@@ -1,64 +1,66 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
+var mainwin = Ti.UI.createWindow
+(
+	{
+		// Colors can be entered using either the name or a hex triplet (#ffffff)
+		//backgroundColor: "black"
+		backgroundColor: "#3a80d8",
+		title: "SPAAAAAAAAAAAAAAAAAAAAAAAAAAACE!"
+	}
+);
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+var mainview = Ti.UI.createView
+(
+	{
+		//backgroundColor: "#ffff00",
+		//backgroundImage: "http://gambargadget.info/wp-content/uploads/2014/06/galaxy-tumblr-photography.jpg",
+		backgroundImage: "galaxy-tumblr-photography.jpg",
+		width: 200,
+		height: 200,
+		top: "10px"	
+	}
+);
 
+var secview = Ti.UI.createView
+(
+	{
+		backgroundImage: "stars.jpg",
+		width: 200,
+		height: 200,	
+	}
+);
 
-//
-// create base UI tab and root window
-//
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
-});
+var thirdview = Ti.UI.createView
+(
+	{
+		backgroundImage: "comet.jpg",
+		width: 200,
+		height: 200,
+		bottom: "10px"	
+	}
+);
 
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
+var mainlabel = Ti.UI.createLabel
+(
+	{
+		text: "So much Space, gotta see it all",
+		color: "#ffffff",
+		top: "420px"
+	}
+);
 
-win1.add(label1);
+var seclabel = Ti.UI.createLabel
+(
+	{
+		text: "Space, space, space, space",
+		color: "#ffffff",
+		bottom: "420px"
+	}
+);
 
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
-});
+mainwin.add(mainview);
+mainwin.add(secview);
+mainwin.add(thirdview);
+mainwin.add(mainlabel);
+mainwin.add(seclabel);
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
-
-win2.add(label2);
-
-
-
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
-
-
-// open tab group
-tabGroup.open();
+mainwin.open();
