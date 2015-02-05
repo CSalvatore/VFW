@@ -1,5 +1,7 @@
+//array
 var videogameArray = ["Call of Duty: AW", "Halo: MCC", "Evolve", "Super Smash Bros", "Battlefield Hardline"];
 
+//object
 var win = Ti.UI.createWindow
 (
 	{
@@ -8,6 +10,7 @@ var win = Ti.UI.createWindow
 	}
 );
 
+//variable
 var arrayView = Ti.UI.createView
 (
 	{
@@ -21,7 +24,7 @@ var arrayView = Ti.UI.createView
 var button1 = Ti.UI.createView
 (
 	{
-		backgroundColor: "#D6D3D9",
+		backgroundColor: "#979C98",
 		height: 75,
 		width: 150,
 		bottom: 50,
@@ -32,7 +35,7 @@ var button1 = Ti.UI.createView
 var button2 = Ti.UI.createView
 (
 	{
-		backgroundColor: "#D6D3D9",
+		backgroundColor: "#979C98",
 		height: 75,
 		width: 150,
 		bottom: 50,
@@ -67,6 +70,7 @@ var buttonLabel1 = Ti.UI.createLabel
 var buttonLabel2 = Ti.UI.createLabel
 (
 	{
+		//property
 		text: "Next",
 		bottom: 75,
 		right: 85
@@ -84,7 +88,8 @@ buttonLabel2.font =
 		fontSize: 18,
 		fontFamily: "monospace",
 	};
-
+	
+//method
 win.add(arrayView);
 win.add(button1);
 win.add(button2);
@@ -92,4 +97,5 @@ win.add(arrayLabel);
 win.add(buttonLabel1);
 win.add(buttonLabel2);
 
+//function
 win.open();
