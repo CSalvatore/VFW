@@ -4,7 +4,7 @@ var win = Ti.UI.createWindow
 (
 	{
 		title: "Video Games",
-		backgroundImage: "gameboy.jpg"
+		backgroundImage: "Link.jpg"
 	}
 );
 
@@ -14,6 +14,7 @@ var arrayView = Ti.UI.createView
 		backgroundImage: "smashbros.jpg",
 		height: 200,
 		width: 350,
+		top: 150
 	}
 );
 
@@ -44,7 +45,7 @@ var arrayLabel = Ti.UI.createLabel
 	{
 		text: videogameArray[3],
 		color: "#ffffff",
-		top: 200,
+		top: 100,
 	}
 );
 
