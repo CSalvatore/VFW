@@ -27,6 +27,7 @@ var dinnerdata = [
 	{title: "Soda"}
 ];
 
+//Breakfast
 var breakfastHeader = Ti.UI.createView
 (
 	{
@@ -61,6 +62,7 @@ for(i = 0; i < lunchdata.length; i++)
 	breakfastSection.add(breakfastRow);
 };
 
+//Lunch
 var lunchHeader = Ti.UI.createView
 (
 	{
@@ -95,6 +97,7 @@ for(i = 0; i < lunchdata.length; i++)
 	lunchSection.add(lunchRow);
 };
 
+//Dinner
 var dinnerHeader = Ti.UI.createView
 (
 	{
