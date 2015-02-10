@@ -1,8 +1,11 @@
 var win = Ti.UI.createWindow
 (
 	{
-		backgroundColor: "#dc41a5"
+		backgroundImage: "Link.jpg",
+		title: "Video Games"
 	}
 );
+
+require('secondary');
 
 win.open();
