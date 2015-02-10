@@ -181,7 +181,6 @@ var gamesTable = Ti.UI.createTableView
 	{
 		backgroundColor: "#D1EBF0",
 		seperatorColor: "#161941",
-		headerTitle: "Video Games",
 		data: [xboxExSection, ps4ExSection, multiplatformSection],
 	}
 );
@@ -189,7 +188,8 @@ var gamesTable = Ti.UI.createTableView
 var win2 = Ti.UI.createWindow
 (
 	{
-		backgroundColor: "white"
+		backgroundColor: "white",
+		title: "Video Games",
 	}
 );
 
