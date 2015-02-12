@@ -1,26 +1,16 @@
-var xboxEx = [
-	{title: "Sunset Overdrive"},
-	{title: "Dead Rising 3"},
-	{title: "Ryse: Son of Rome"},
-	{title: "Fable Legends"},
-	{title: "Quantum Break"}
-];
+var datafile = require('JSON');
 
-var ps4Ex = [
-	{title: "The Order: 1886"},
-	{title: "Street Fighter V"},
-	{title: "Uncharted 4"},
-	{title: "No Man's Sky"},
-	{title: "Planetside 2"}
-];
-
-var multiplatform = [
-	{title: "Battlefield Hardline"},
-	{title: "Evolve"},
-	{title: "The Witcher 3: Wild Hunt"},
-	{title: "The Division"},
-	{title: "Mortal Kombat X"}
-];
+var getDetail = function(item){
+	var winDetail = Ti.UI.createWindow
+	(
+		{
+			backgroundImage: "Minecraft.jpg",
+			title: item.title,
+		}
+	);
+	
+	navwin.openWindow(winDetail);
+};
 
 //( Main Window Buttons
 var tableButton = Ti.UI.createView
@@ -97,15 +87,22 @@ var xboxExSection = Ti.UI.createTableViewSection
 	}
 );
 
-for(i = 0; i < xboxEx.length; i++)
+for(i = 0; i < 3; i++)
 {
-	var xboxExRow = Ti.UI.createTableViewRow
-	(
-		{
-			title: xboxEx[i].title,
-		}
-	);
-	xboxExSection.add(xboxExRow);
+	for(i = 0; i < datafile.xboxEx.length; i++)
+	{
+		var xboxExRow = Ti.UI.createTableViewRow
+		(
+			{
+				title: datafile.xboxEx[i].title,
+			}
+		);
+		xboxExSection.add(xboxExRow);
+		
+		xboxExRow.addEventListener('click', function(item){
+		getDetail(item.source);
+		});
+	};
 };
 
 var ps4ExHeader = Ti.UI.createView
@@ -131,16 +128,16 @@ var ps4ExSection = Ti.UI.createTableViewSection
 	}
 );
 
-for(i = 0; i < ps4Ex.length; i++)
-{
-	var ps4ExRow = Ti.UI.createTableViewRow
-	(
-		{
-			title: ps4Ex[i].title,
-		}
-	);
-	ps4ExSection.add(ps4ExRow);
-};
+// for(i = 0; i < datafile.ps4Ex.length; i++)
+// {
+	// var ps4ExRow = Ti.UI.createTableViewRow
+	// (
+		// {
+			// title: datafile.ps4Ex[i].title,
+		// }
+	// );
+	// ps4ExSection.add(ps4ExRow);
+// };
 
 var multiplatformHeader = Ti.UI.createView
 (
@@ -165,16 +162,16 @@ var multiplatformSection = Ti.UI.createTableViewSection
 	}
 );
 
-for(i = 0; i < multiplatform.length; i++)
-{
-	var multiplatformRow = Ti.UI.createTableViewRow
-	(
-		{
-			title: multiplatform[i].title,
-		}
-	);
-	multiplatformSection.add(multiplatformRow);
-};
+// for(i = 0; i < datafile.multiplatform.length; i++)
+// {
+	// var multiplatformRow = Ti.UI.createTableViewRow
+	// (
+		// {
+			// title: datafile.multiplatform[i].title,
+		// }
+	// );
+	// multiplatformSection.add(multiplatformRow);
+// };
 
 var gamesTable = Ti.UI.createTableView
 (
@@ -193,19 +190,8 @@ var tablewin = Ti.UI.createWindow
 	}
 );
 
-var closeButton = Titanium.UI.createButton
-(
-	{
-    	title: 'Back',
-	}
-);
-
-closeButton.addEventListener('click', function(){
-    navwin.close(tablewin);
-});
-
 tableButton.addEventListener('click', function(){
-	navwin.open(tablewin);
+	navwin.openWindow(tablewin);
 });
 
 var osName = Ti.Platform.name;
@@ -220,7 +206,6 @@ xboxExHeader.add(xboxExLabel);
 ps4ExHeader.add(ps4ExLabel);
 multiplatformHeader.add(multiplatformLabel);
 tablewin.add(gamesTable);
-tablewin.add(closeButton);
 //Main Window
 listButton.add(listLabel);
 tableButton.add(tableLabel);

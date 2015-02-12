@@ -2,7 +2,7 @@ var win = Ti.UI.createWindow
 (
 	{
 		backgroundImage: "Link.jpg",
-		title: "Video Games"
+		title: "Main Menu"
 	}
 );
 
