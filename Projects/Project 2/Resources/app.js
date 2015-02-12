@@ -6,6 +6,13 @@ var win = Ti.UI.createWindow
 	}
 );
 
+var navwin = Ti.UI.iOS.createNavigationWindow
+(
+	{
+   		window: win
+	}
+);
+
 require('secondary');
 
-win.open();
+navwin.open();

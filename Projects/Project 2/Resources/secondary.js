@@ -185,7 +185,7 @@ var gamesTable = Ti.UI.createTableView
 	}
 );
 
-var win2 = Ti.UI.createWindow
+var tablewin = Ti.UI.createWindow
 (
 	{
 		backgroundColor: "white",
@@ -193,12 +193,20 @@ var win2 = Ti.UI.createWindow
 	}
 );
 
-var navwin = Ti.UI.iOS.createNavigationWindow
+var closeButton = Titanium.UI.createButton
 (
 	{
-   		window: win2
+    	title: 'Back',
 	}
 );
+
+closeButton.addEventListener('click', function(){
+    navwin.close(tablewin);
+});
+
+tableButton.addEventListener('click', function(){
+	navwin.open(tablewin);
+});
 
 var osName = Ti.Platform.name;
 
@@ -207,15 +215,12 @@ if (osName === "iPhone OS")
 	gamesTable.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
 };
 
-tableButton.addEventListener('click', function(){
-	navwin.open();
-});
-
 //Tables
 xboxExHeader.add(xboxExLabel);
 ps4ExHeader.add(ps4ExLabel);
 multiplatformHeader.add(multiplatformLabel);
-win2.add(gamesTable);
+tablewin.add(gamesTable);
+tablewin.add(closeButton);
 //Main Window
 listButton.add(listLabel);
 tableButton.add(tableLabel);

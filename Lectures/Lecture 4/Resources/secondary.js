@@ -51,7 +51,7 @@ var breakfastSection = Ti.UI.createTableViewSection
 	}
 );
 
-for(i = 0; i < lunchdata.length; i++)
+for(i = 0; i < breakfastdata.length; i++)
 {
 	var breakfastRow = Ti.UI.createTableViewRow
 	(
