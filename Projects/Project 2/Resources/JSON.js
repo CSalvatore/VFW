@@ -1,26 +1,26 @@
-exports.xboxEx = [
-	{title: "Sunset Overdrive"},
-	{title: "Dead Rising 3"},
-	{title: "Ryse: Son of Rome"},
-	{title: "Fable Legends"},
-	{title: "Quantum Break"}
-];
-
-exports.ps4Ex = [
-	{title: "The Order: 1886"},
-	{title: "Street Fighter V"},
-	{title: "Uncharted 4"},
-	{title: "No Man's Sky"},
-	{title: "Planetside 2"}
-];
-
-exports.multiplatform = [
-	{title: "Battlefield Hardline"},
-	{title: "Evolve"},
-	{title: "The Witcher 3: Wild Hunt"},
-	{title: "The Division"},
-	{title: "Mortal Kombat X"}
-];
+// exports.xboxEx = [
+	// {title: "Sunset Overdrive"},
+	// {title: "Dead Rising 3"},
+	// {title: "Ryse: Son of Rome"},
+	// {title: "Fable Legends"},
+	// {title: "Quantum Break"}
+// ];
+// 
+// exports.ps4Ex = [
+	// {title: "The Order: 1886"},
+	// {title: "Street Fighter V"},
+	// {title: "Uncharted 4"},
+	// {title: "No Man's Sky"},
+	// {title: "Planetside 2"}
+// ];
+// 
+// exports.multiplatform = [
+	// {title: "Battlefield Hardline"},
+	// {title: "Evolve"},
+	// {title: "The Witcher 3: Wild Hunt"},
+	// {title: "The Division"},
+	// {title: "Mortal Kombat X"}
+// ];
 
 var games = {
 	"xbox": {
@@ -54,5 +54,5 @@ var games = {
 		]
 	}
 };
-
-console.log(games.xbox.exclusiveGames[0].name);
+exports.games = games;
+//console.log(games.xbox.exclusiveGames[0]);

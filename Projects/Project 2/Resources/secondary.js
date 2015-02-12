@@ -1,4 +1,5 @@
 var datafile = require('JSON');
+var sections = [];
 
 var getDetail = function(item){
 	var winDetail = Ti.UI.createWindow
@@ -8,7 +9,6 @@ var getDetail = function(item){
 			title: item.title,
 		}
 	);
-	
 	navwin.openWindow(winDetail);
 };
 
@@ -82,29 +82,38 @@ var xboxExLabel = Ti.UI.createLabel
 var xboxExSection = Ti.UI.createTableViewSection
 (
 	{
-		//headerTitle: "Breakfast"
 		headerView: xboxExHeader,
 	}
 );
 
-for(i = 0; i < 3; i++)
+for(n in datafile.games)
 {
-	for(i = 0; i < datafile.xboxEx.length; i++)
+	var count = 0;
+	var section = Ti.UI.createTableViewSection
+	(
+		{
+			headerTitle: n,
+		}
+	);
+	console.log(n);
+	
+	for(i = 0; i < datafile.games[n].exclusiveGames.length; i++)
 	{
-		var xboxExRow = Ti.UI.createTableViewRow
+		var row = Ti.UI.createTableViewRow
 		(
 			{
-				title: datafile.xboxEx[i].title,
+				title: datafile.games[n].exclusiveGames[i].name,
 			}
 		);
-		xboxExSection.add(xboxExRow);
-		
-		xboxExRow.addEventListener('click', function(item){
+		console.log(datafile.games[n].exclusiveGames[i].name);
+		section.add(row);
+			
+		row.addEventListener('click', function(item){
 		getDetail(item.source);
 		});
 	};
+	sections.push(section);
 };
-
 var ps4ExHeader = Ti.UI.createView
 (
 	{
@@ -123,7 +132,6 @@ var ps4ExLabel = Ti.UI.createLabel
 var ps4ExSection = Ti.UI.createTableViewSection
 (
 	{
-		//headerTitle: "Breakfast"
 		headerView: ps4ExHeader,
 	}
 );
@@ -157,7 +165,6 @@ var multiplatformLabel = Ti.UI.createLabel
 var multiplatformSection = Ti.UI.createTableViewSection
 (
 	{
-		//headerTitle: "Breakfast"
 		headerView: multiplatformHeader,
 	}
 );
@@ -178,10 +185,9 @@ var gamesTable = Ti.UI.createTableView
 	{
 		backgroundColor: "#D1EBF0",
 		seperatorColor: "#161941",
-		data: [xboxExSection, ps4ExSection, multiplatformSection],
+		data: sections,
 	}
 );
-
 var tablewin = Ti.UI.createWindow
 (
 	{
