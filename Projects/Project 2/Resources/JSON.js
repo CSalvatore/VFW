@@ -23,7 +23,7 @@
 // ];
 
 var games = {
-	"xbox": {
+	"Xbox One": {
 		"headerTitle": "Xbox Exclusives",
 		"exclusiveGames": [
 			{name: "Sunset Overdrive"},
@@ -33,7 +33,7 @@ var games = {
 			{name: "Quantum Break"},
 		]
 	},
-	"ps4": {
+	"PS4": {
 		"headerTitle": "PS4 Exclusives",
 		"exclusiveGames": [
 			{name: "The Order: 1886"},
@@ -43,7 +43,7 @@ var games = {
 			{name: "Planetside 2"}
 		]
 	},
-	"multiplatform": {
+	"Multiplatform": {
 		"headerTitle": "Multiplatform",
 		"exclusiveGames": [
 			{name: "Battlefield Hardline"},
