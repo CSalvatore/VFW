@@ -162,7 +162,7 @@ var xbox = Ti.UI.createListSection
 var ps4 = Ti.UI.createListSection
 (
 	{
-		headerTitle: "PS4",
+		headerTitle: "Play Station 4",
 	}
 );
 
