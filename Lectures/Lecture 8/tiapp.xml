@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.FullSail.Lectures</id>
-    <name>Lecture 7</name>
+    <name>Lecture 8</name>
     <version>1.0</version>
     <publisher>Coryjg</publisher>
     <url>http://</url>
-    <description>undefined</description>
+    <description/>
     <copyright>2015 by Coryjg</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>f07a5b62-e4ca-48c0-89b1-ca20aac304d0</guid>
+    <guid>d1d5039f-2f60-4898-8125-1d800dcfe75b</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
