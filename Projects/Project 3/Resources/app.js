@@ -4,7 +4,6 @@ var win = Ti.UI.createWindow
 (
 	{
 		backgroundColor: "#1b4d32",
-		layout: "horizontal",
 		title: "Space Gallery"
 	}
 );
