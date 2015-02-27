@@ -23,9 +23,8 @@ var navwin = Ti.UI.iOS.createNavigationWindow
 var gallerywin = Ti.UI.createWindow
 (
 	{
-		layout: "horizontal",
 		title: "Monster Gallery",
-		backgroundColor: "#fff",
+		backgroundImage: "images/zinogre.jpg",
 	}
 );
 
@@ -47,5 +46,6 @@ var videowin = Ti.UI.createWindow
 
 require('secondary')
 require('list')
+require('gallery')
 
 navwin.open();
