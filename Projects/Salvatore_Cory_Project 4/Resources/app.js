@@ -1,8 +1,3 @@
-var getRandomInt = function (min, max) 
-{
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
 var mainwin = Ti.UI.createWindow
 (
 	{
@@ -23,7 +18,7 @@ var navwin = Ti.UI.iOS.createNavigationWindow
 var gallerywin = Ti.UI.createWindow
 (
 	{
-		title: "Monster Gallery",
+		title: "Gallery",
 		backgroundImage: "images/zinogre.jpg",
 	}
 );
@@ -39,13 +34,20 @@ var listwin = Ti.UI.createWindow
 var videowin = Ti.UI.createWindow
 (
 	{
-		title: "Trailer",
-		backgroundColor: "#fff",
+		title: "Videos",
+		backgroundImage: "images/daora.jpg",
+		orientationModes: [
+			Ti.UI.PORTRAIT,
+			Ti.UI.UPSIDE_PORTRAIT,
+			Ti.UI.LANDSCAPE_LEFT,
+			Ti.UI.LANDSCAPE_RIGHT,
+		],
 	}
 );
 
-require('secondary')
-require('list')
-require('gallery')
+require('secondary');
+require('list');
+require('gallery');
+require('video');
 
 navwin.open();

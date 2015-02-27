@@ -79,7 +79,7 @@ for (var i=0; i < 3; i++)
 	else if(i == 2)
 	{
 		button.right = 30;
-		label.text = "VIDEO";
+		label.text = "VIDEOS";
 		button.addEventListener('click', function(){
 			navwin.openWindow(videowin);
 		});

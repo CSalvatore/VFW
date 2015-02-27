@@ -6,6 +6,7 @@ var showDetails = function(item){
 			height: 200,
 			width: 350,
 			bottom: 100,
+			borderRadius: 10,
 		}
 	);
 		
@@ -33,7 +34,7 @@ var showDetails = function(item){
 	var itemwin = Ti.UI.createWindow
 		(
 			{
-				backgroundImage: "images/mh4u.jpg",
+				backgroundImage: "images/tigrex.jpg",
 				title: item.properties.title,
 			}
 		);
